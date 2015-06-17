@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description" : "devops-part-four, app-server",
+  "Description" : "devops-part-four-davsucks, app-server",
 
   "Parameters" : {
     "SubnetId" : { "Type" : "String" },
@@ -38,7 +38,7 @@
           "useradd devops-user \n",
           "mkdir /home/devops-user \n",
           "chown devops-user:devops-user /home/devops-user \n",
-          "aws s3 cp s3://devops-part-four/ /home/devops-user --recursive --exclude \"*\" --include \"application-*-", { "Ref" : "BuildNumber" }, "-standalone.jar\" \n",
+          "aws s3 cp s3://devops-part-four-davsucks/ /home/devops-user --recursive --exclude \"*\" --include \"application-*-", { "Ref" : "BuildNumber" }, "-standalone.jar\" \n",
           "chown devops-user:devops-user /home/devops-user/application-*-standalone.jar \n",
           "su - devops-user -c \"java -jar /home/devops-user/application-*-standalone.jar\""
 		    ]]}}
